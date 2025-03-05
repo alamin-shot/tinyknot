@@ -1,24 +1,110 @@
 @import "tailwindcss";
-
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* * {
+	margin: 0;
+	padding: 0;
+} */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-family: var(--font-roboto-condensed), sans-serif;
+	background: linear-gradient(to right, #201f1ffe, #400101, #333333fe);
+}
+/* nav bar */
+.nav {
+	background: linear-gradient(to right, #53140b 0%, #201f1ffe 55%);
+}
+
+.nav li {
+	font-size: 18px;
+	padding: 7px;
+	border-radius: 5px;
+}
+
+.nav li:hover {
+	background: #630000;
+	color: #f1e0c6;
+}
+
+/* Home page */
+.home {
+	width: 90%;
+	margin: 0 auto;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.heading {
+	text-align: center;
+}
+
+.heading h1 {
+	font-size: 3.5rem;
+	font-weight: 800;
+	line-height: 1.2;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	color: #f1e0c6;
+}
+
+.short_form form {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.short_form input {
+	font-size: 20px;
+	padding: 10px;
+	width: 350px;
+	border: 1px solid #f1e0c6;
+	border-radius: 10px;
+	outline: none;
+	margin-right: 10px;
+}
+.short_form button {
+	padding: 13px;
+	background: rgb(194, 29, 0);
+	border-radius: 10px;
+}
+.short_form button :active {
+	background: rgb(66, 10, 0);
+}
+@keyframes ninjaMove {
+	0% {
+		transform: translateX(-100px) scale(0);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateX(250px) scale(1.2);
+		opacity: 0.7;
+	}
+
+	100% {
+		transform: translateX(700px) scale(0);
+		opacity: 0;
+	}
+}
+
+.ninja {
+	top: -7px;
+	font-size: 30px; /* Adjust ninja size */
+	animation: ninjaMove 5s ease-in-out forwards infinite;
+}
+
+@keyframes rotateBlade {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.blade {
+	animation: rotateBlade 3s linear infinite; /* Adjust 2s for speed */
 }
